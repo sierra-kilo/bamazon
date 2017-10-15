@@ -1,5 +1,11 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var http = require("http");
+
+http.createServer(function (req, res) {
+    res.writeHead(200, {"Content-Type": "text/plain"})
+    res.end('Hellow world\n')
+}).listen(process.env.port)
 
 // create the connection information for the sql database
 var connection = mysql.createConnection({
